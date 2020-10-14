@@ -10,6 +10,7 @@ export default function sketch(p){
   let greenColor;
   let redColor;
   let orangeColor;
+  let colors;
 
     let canvas;
     let bars = [];
@@ -25,6 +26,13 @@ export default function sketch(p){
       greenColor = p.color(16, 112, 1);
       redColor = p.color(208, 0, 46);
       orangeColor = p.color(253, 148, 8);
+
+      colors = {
+        blueColor,
+        greenColor,
+        redColor,
+        orangeColor
+      }
 
 
       for (let i = 0; i < 10; i++) {
@@ -67,7 +75,8 @@ export default function sketch(p){
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
       if(canvas) { //Make sure the canvas has been created
         //swapPlacesWith(3,4,bars);
-        bubbleSort(bars);
+        console.log(colors.blueColor);
+        bubbleSort(bars, colors);
       } else {
         return;
       }
