@@ -11,14 +11,19 @@ export default class Home extends Component {
 
     constructor(){
         super();
-        this.state = {algo: "bubble"};
+        this.state = {algo: "bubble", reset: "false"};
         this.chooseAlgo = this.chooseAlgo.bind(this);
+        this.resetCanvas = this.resetCanvas.bind(this);
         this.headerRef = React.createRef();
     }
 
 
     chooseAlgo() {
         this.setState({algo:this.headerRef.current.state["algorithm"]})
+    }
+
+    resetCanvas() {
+        this.setState({reset: "true"})
     }
 
    
@@ -29,7 +34,8 @@ export default class Home extends Component {
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
                     <Button onClick={this.chooseAlgo}>Start sorting</Button>
-                    <P5Wrapper sketch={sketch} algo={this.state.algo}></P5Wrapper>
+                    <Button onClick={this.resetCanvas}>Reset</Button>
+                    <P5Wrapper sketch={sketch} algo={this.state.algo} reset={this.state.reset}></P5Wrapper>
                 </div>
             </Jumbotron>
         </>
