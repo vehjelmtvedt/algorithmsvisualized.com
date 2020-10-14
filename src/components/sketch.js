@@ -18,7 +18,7 @@ export default function sketch(p){
     let BAR_WIDTH = 60;
 
     p.setup = () => {
-      canvas = p.createCanvas(900, 900);
+      canvas = p.createCanvas(900, 450);
       p.noStroke();
 
       // Set up colors
@@ -35,7 +35,7 @@ export default function sketch(p){
       }
 
 
-      for (let i = 0; i < 10; i++) {
+      for (let i = 0; i < 15; i++) {
         let height = random.int(0,150);
         values[i] = height;
         bars.push(new Bar(i*BAR_WIDTH, height, blueColor));
@@ -74,10 +74,8 @@ export default function sketch(p){
 
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
       if(canvas) { //Make sure the canvas has been created
+        console.log(newProps);
         selectionSort(bars, colors);
-        //bubbleSort(bars, colors);
-
-
       } else {
         return;
       }

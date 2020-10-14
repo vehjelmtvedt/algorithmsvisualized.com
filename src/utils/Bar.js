@@ -3,7 +3,7 @@ import sleep from '../utils/functions/sleep'
 export default class Bar {
     constructor(xCoordIn, heightIn, startColor) {
         this.xCoord = xCoordIn;
-        this.yCoord = 150;
+        this.yCoord = 350;
         this.height = heightIn;
         this.color = startColor;
         this.nextColor = startColor;

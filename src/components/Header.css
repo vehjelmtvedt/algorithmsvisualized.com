@@ -1,0 +1,22 @@
+.navbar {
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+.heading {
+    color: white;
+    letter-spacing: 3px;
+}
+
+.secondHeading {
+    color: orange;
+}
+
+.navlinks > * {
+    margin-left: 90px;
+}
+
+.navlink {
+    color: white;
+    font-size: 18px;
+}
