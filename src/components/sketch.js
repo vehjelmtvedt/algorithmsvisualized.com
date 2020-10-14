@@ -1,7 +1,7 @@
 import Bar from '../utils/Bar'
 import random from 'random'
-import swapPlacesWith from '../utils/functions/swap'
 import bubbleSort from '../utils/algorithms/bubbleSort'
+import selectionSort from '../utils/algorithms/selectionSort'
 
 
 export default function sketch(p){
@@ -74,9 +74,10 @@ export default function sketch(p){
 
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
       if(canvas) { //Make sure the canvas has been created
-        //swapPlacesWith(3,4,bars);
-        console.log(colors.blueColor);
-        bubbleSort(bars, colors);
+        selectionSort(bars, colors);
+        //bubbleSort(bars, colors);
+
+
       } else {
         return;
       }
