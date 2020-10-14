@@ -14,8 +14,8 @@ export default class Home extends Component {
         this.randomColor = this.randomColor.bind(this);
     }
 
-    randomColor(algorithm){
-        this.setState({algo:algorithm}
+    randomColor(){
+        this.setState({algo:"algorithm"}
         )
     }
 
@@ -27,7 +27,7 @@ export default class Home extends Component {
             <Header/>
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
-                    <Button onClick={this.randomColor("bubbles")}>Start sorting</Button>
+                    <Button onClick={this.randomColor}>Start sorting</Button>
                     <P5Wrapper sketch={sketch} algo={this.state.algo}></P5Wrapper>
                 </div>
             </Jumbotron>
