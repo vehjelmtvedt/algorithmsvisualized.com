@@ -1,5 +1,6 @@
 import Bar from '../utils/Bar'
 import random from 'random'
+import swapPlacesWith from '../utils/functions/swap'
 
 
 export default function sketch(p){
@@ -35,7 +36,6 @@ export default function sketch(p){
     p.draw = () => {
       p.background(255, 255, 255);
       for (let i = 0; i < bars.length; i++) {
-        console.log(bars);
         drawBar(bars[i]);
       }
     }
@@ -63,16 +63,14 @@ export default function sketch(p){
       }
     }
 
-    
-
-    function sleep(ms) {
-      return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
-      if(canvas) //Make sure the canvas has been created
-        bars[0].move(1);
+      if(canvas) { //Make sure the canvas has been created
+        //bars[0].move(1);
         console.log(bars);
+        swapPlacesWith(3,4,bars);
+      } else {
+        return;
+      }
     }
 
     

@@ -1,5 +1,3 @@
-var sleep = require('sleep');
-
 export default class Bar {
     constructor(xCoordIn, heightIn, startColor) {
         this.xCoord = xCoordIn;
@@ -49,20 +47,19 @@ export default class Bar {
 
     // Moves the bar to a given index's position
     async move(index) {
-        // let targetxPos = index * 60;
+        let targetxPos = index * 60;
   
-        // // If bar is already at that position we return
-        // if (targetxPos === this.x) {
-        //   return;
-        // } else {
-        //   let distance = targetxPos - this.x;
-        //   while (targetxPos !== this.x) {
-        //     // Change the xCoord in tenths of the distance we have to cover every 10ms
-        //     this.x += distance / 10;
-        //     await this.sleep(100);
-        //   }
-        // }
-        this.x = index * 60;
+        // If bar is already at that position we return
+        if (targetxPos === this.x) {
+          return;
+        } else {
+          let distance = targetxPos - this.x;
+          while (targetxPos !== this.x) {
+            // Change the xCoord in tenths of the distance we have to cover every 10ms
+            this.x += distance / 10;
+            await this.sleep(10);
+          }
+        }
     }
 
     sleep(ms) {
