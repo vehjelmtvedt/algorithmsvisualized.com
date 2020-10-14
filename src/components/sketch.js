@@ -1,6 +1,7 @@
 import Bar from '../utils/Bar'
 import random from 'random'
 import swapPlacesWith from '../utils/functions/swap'
+import bubbleSort from '../utils/algorithms/bubbleSort'
 
 
 export default function sketch(p){
@@ -65,9 +66,8 @@ export default function sketch(p){
 
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
       if(canvas) { //Make sure the canvas has been created
-        //bars[0].move(1);
-        console.log(bars);
-        swapPlacesWith(3,4,bars);
+        //swapPlacesWith(3,4,bars);
+        bubbleSort(bars);
       } else {
         return;
       }

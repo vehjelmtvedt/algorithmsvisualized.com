@@ -1,3 +1,5 @@
+import sleep from '../utils/functions/sleep'
+
 export default class Bar {
     constructor(xCoordIn, heightIn, startColor) {
         this.xCoord = xCoordIn;
@@ -57,12 +59,8 @@ export default class Bar {
           while (targetxPos !== this.x) {
             // Change the xCoord in tenths of the distance we have to cover every 10ms
             this.x += distance / 10;
-            await this.sleep(10);
+            await sleep(10);
           }
         }
-    }
-
-    sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
     }
 }
