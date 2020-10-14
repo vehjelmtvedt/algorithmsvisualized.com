@@ -12,7 +12,6 @@ export default class Header extends Component {
     }
 
     handleClick(algo) {
-        console.log(algo);
         this.setState({algorithm: algo})
     }
     

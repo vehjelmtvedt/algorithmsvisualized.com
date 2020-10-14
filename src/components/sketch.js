@@ -1,7 +1,8 @@
 import Bar from '../utils/Bar'
 import random from 'random'
-import bubbleSort from '../utils/algorithms/bubbleSort'
+//import bubbleSort from '../utils/algorithms/bubbleSort'
 import selectionSort from '../utils/algorithms/selectionSort'
+import bubbleSort from '../utils/algorithms/bubbleSort'
 
 
 export default function sketch(p){
@@ -74,8 +75,12 @@ export default function sketch(p){
 
     p.myCustomRedrawAccordingToNewPropsHandler = (newProps) => {
       if(canvas) { //Make sure the canvas has been created
-        console.log(newProps);
-        selectionSort(bars, colors);
+        // Decide which algorithm from newProps
+        if (newProps.algo === "bubble") {
+          bubbleSort(bars, colors)
+        } else if (newProps.algo === "selection") {
+          selectionSort(bars, colors);
+        }
       } else {
         return;
       }

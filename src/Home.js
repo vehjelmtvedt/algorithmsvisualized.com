@@ -8,26 +8,27 @@ import './Home.css'
 
 
 export default class Home extends Component {
+
     constructor(){
         super();
         this.state = {algo: "bubble"};
-        this.randomColor = this.randomColor.bind(this);
-    }
-
-    randomColor(){
-        this.setState({algo:"algorithm"}
-        )
+        this.chooseAlgo = this.chooseAlgo.bind(this);
+        this.headerRef = React.createRef();
     }
 
 
+    chooseAlgo() {
+        this.setState({algo:this.headerRef.current.state["algorithm"]})
+    }
+
+   
   render() {
     return (
         <>  
-            
-            <Header/>
+            <Header ref={this.headerRef}/>
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
-                    <Button onClick={this.randomColor}>Start sorting</Button>
+                    <Button onClick={this.chooseAlgo}>Start sorting</Button>
                     <P5Wrapper sketch={sketch} algo={this.state.algo}></P5Wrapper>
                 </div>
             </Jumbotron>
