@@ -20,7 +20,6 @@ export default class Home extends Component {
         <div>
             <button onClick={this.randomColor}>Random Color</button>
             <P5Wrapper sketch={sketch} color={this.state.color}></P5Wrapper>
-
         </div>
     );
   }
