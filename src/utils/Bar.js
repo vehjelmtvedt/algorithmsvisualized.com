@@ -78,4 +78,14 @@ export default class Bar {
             await sleep(10);
         }
     }
+
+    async deselect() {
+        let distance = 200;
+        let targetYPos = this.y - distance;
+
+        while (targetYPos !== this.y) {
+            this.y -= distance / 10;
+            await sleep(10);
+        }
+    }
 }

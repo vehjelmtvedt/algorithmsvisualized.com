@@ -8,10 +8,10 @@ import insertionSort from '../utils/algorithms/insertionSort'
 
 export default function sketch(p){
   // Color Variables
-    let blueColor;
-    let greenColor;
-    let redColor;
-    let orangeColor;
+    let blue;
+    let green;
+    let red;
+    let orange;
     let colors;
 
     let canvas;
@@ -28,23 +28,23 @@ export default function sketch(p){
         p.noStroke();
 
         // Set up colors
-        blueColor = p.color(158, 207, 224);
-        greenColor = p.color(16, 112, 1);
-        redColor = p.color(208, 0, 46);
-        orangeColor = p.color(253, 148, 8);
+        blue = p.color(158, 207, 224);
+        green = p.color(16, 112, 1);
+        red = p.color(208, 0, 46);
+        orange = p.color(253, 148, 8);
 
         colors = {
-            blueColor,
-            greenColor,
-            redColor,
-            orangeColor
+            blue,
+            green,
+            red,
+            orange
         }
 
 
         for (let i = 0; i < 15; i++) {
             let height = random.int(0,150);
             values[i] = height;
-            bars.push(new Bar(i*BAR_WIDTH, height, blueColor));
+            bars.push(new Bar(i*BAR_WIDTH, height, blue));
         }
     }
 
