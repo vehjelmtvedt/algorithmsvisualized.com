@@ -3,6 +3,7 @@
 ***This is a work in progress***.
 
 A React.js + p5.js web application that visualizes various sorting algorithms using rectangular bars. So far implemented Bubble, Selection and Insertion sort.
+The website can be found [here]("https://github.com/vehjelmtvedt/algorithmsvisualized.com").
 
 Much inspiration was gathered from visualgo.net.
 
