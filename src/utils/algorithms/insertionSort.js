@@ -6,7 +6,7 @@ export default async function insertionSort(bars, colors) {
         bars[i-1].changeColor(colors.orange);
         await sleep(500);
         bars[i].changeColor(colors.red);
-        await sleep(500);
+        bars[i].select();
         for (let j = i; j >= 1; j--) {
             bars[j-1].changeColor(colors.green);
             await sleep(500);
@@ -16,10 +16,12 @@ export default async function insertionSort(bars, colors) {
                 bars[j].changeColor(colors.orange);
                 if (j === 1) {
                   bars[0].changeColor(colors.orange);
+                  bars[0].deselect();
                 }
             } else {
-                await sleep(500);
+                await sleep(200);
                 bars[j].changeColor(colors.orange);
+                bars[j].deselect();
                 bars[j-1].changeColor(colors.orange);
                 await sleep(500);
                 break;

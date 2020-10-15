@@ -4,6 +4,7 @@ import random from 'random'
 import selectionSort from '../utils/algorithms/selectionSort'
 import bubbleSort from '../utils/algorithms/bubbleSort'
 import insertionSort from '../utils/algorithms/insertionSort'
+import testing from '../utils/functions/testing'
 
 
 export default function sketch(p){
@@ -64,7 +65,7 @@ export default function sketch(p){
     function getColor(bar) {
         if (bar.changingColor) {
             var color = p.lerpColor(bar.color, bar.nextColor, bar.colorGradient);
-            bar.colorGradient += 0.05;
+            bar.colorGradient += 0.07;
 
         // If colorGradient is 1.0, the color change is complete
         if (bar.colorGradient > 1) {

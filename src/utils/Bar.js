@@ -50,7 +50,7 @@ export default class Bar {
     // Moves the bar to a given index's position
     async move(index) {
         let targetxPos = index * 60;
-  
+
         // If bar is already at that position we return
         if (targetxPos === this.x) {
           return;
@@ -69,6 +69,7 @@ export default class Bar {
         this.nextColor = nextColor;
     }
 
+    // Move bar down by 200 units to indicate that it is selected
     async select() {
         let distance = 200;
         let targetYPos = this.y + distance;
@@ -79,6 +80,7 @@ export default class Bar {
         }
     }
 
+    // Move bar up again to proper y position to indicate that it is not selected anymore
     async deselect() {
         let distance = 200;
         let targetYPos = this.y - distance;
