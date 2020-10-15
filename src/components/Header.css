@@ -9,7 +9,7 @@
 }
 
 .secondHeading {
-    color: orange;
+    color: #EF8A17;
 }
 
 .navlinks > * {
@@ -20,3 +20,15 @@
     color: white;
     font-size: 18px;
 }
+
+.navlink:hover {
+    color:  #EF8A17;
+    transition: 0.3s ease;
+}
+
+.active {
+    color:  #EF8A17;
+}
+
+
+

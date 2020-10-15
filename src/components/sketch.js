@@ -3,6 +3,7 @@ import random from 'random'
 //import bubbleSort from '../utils/algorithms/bubbleSort'
 import selectionSort from '../utils/algorithms/selectionSort'
 import bubbleSort from '../utils/algorithms/bubbleSort'
+import insertionSort from '../utils/algorithms/insertionSort'
 
 
 export default function sketch(p){
@@ -81,7 +82,6 @@ export default function sketch(p){
         if(canvas) { //Make sure the canvas has been created
             // Decide which algorithm from newProps
             if (newProps.reset === "true") {
-               console.log("RESETTING");
                bars = [];
                reset();
                return;
@@ -90,8 +90,10 @@ export default function sketch(p){
                 bubbleSort(bars, colors)
             } else if (newProps.algo === "selection") {
                 selectionSort(bars, colors);
-            } else if (newProps.reset === "true") {
-                console.log("I WAS TOLD TO RESET")
+            } else if (newProps.algo === "insertion") {
+                console.log("INSERTION");
+                insertionSort(bars, colors);
+                
             }
         } else {
             return;

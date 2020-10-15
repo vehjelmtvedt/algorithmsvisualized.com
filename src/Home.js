@@ -20,10 +20,11 @@ export default class Home extends Component {
 
     chooseAlgo() {
         this.setState({algo:this.headerRef.current.state["algorithm"]})
+        this.resetCanvas("false");
     }
 
-    resetCanvas() {
-        this.setState({reset: "true"})
+    resetCanvas(value) {
+        this.setState({reset: value})
     }
 
    
@@ -34,7 +35,7 @@ export default class Home extends Component {
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
                     <Button onClick={this.chooseAlgo}>Start sorting</Button>
-                    <Button onClick={this.resetCanvas}>Reset</Button>
+                    <Button onClick={() => this.resetCanvas('true')}>Reset</Button>
                     <P5Wrapper sketch={sketch} algo={this.state.algo} reset={this.state.reset}></P5Wrapper>
                 </div>
             </Jumbotron>

@@ -3,7 +3,7 @@ import sleep from '../utils/functions/sleep'
 export default class Bar {
     constructor(xCoordIn, heightIn, startColor) {
         this.xCoord = xCoordIn;
-        this.yCoord = 350;
+        this.yCoord = 200;
         this.height = heightIn;
         this.color = startColor;
         this.nextColor = startColor;
@@ -67,5 +67,15 @@ export default class Bar {
     changeColor(nextColor) {
         this.changingColor = true;
         this.nextColor = nextColor;
+    }
+
+    async select() {
+        let distance = 200;
+        let targetYPos = this.y + distance;
+
+        while (targetYPos !== this.y) {
+            this.y += distance / 10;
+            await sleep(10);
+        }
     }
 }
