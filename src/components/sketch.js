@@ -65,7 +65,7 @@ export default function sketch(p){
         if (bar.changingColor) {
             var color = p.lerpColor(bar.color, bar.nextColor, bar.colorGradient);
             bar.colorGradient += 0.05;
-  
+
         // If colorGradient is 1.0, the color change is complete
         if (bar.colorGradient > 1) {
             bar.color = bar.nextColor;
@@ -91,14 +91,13 @@ export default function sketch(p){
             } else if (newProps.algo === "selection") {
                 selectionSort(bars, colors);
             } else if (newProps.algo === "insertion") {
-                console.log("INSERTION");
                 insertionSort(bars, colors);
-                
+
             }
         } else {
             return;
         }
     }
 
-    
+
 }
