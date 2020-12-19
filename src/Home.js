@@ -5,18 +5,20 @@ import Button from 'react-bootstrap/Button'
 import Header from './components/Header'
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import './Home.css'
+import Confetti from 'react-dom-confetti';
 
 
 export default class Home extends Component {
 
+
+
     constructor(){
         super();
-        this.state = {algo: "bubble", reset: "false"};
+        this.state = {algo: "bubble", reset: "false", active: window.sorted};
         this.chooseAlgo = this.chooseAlgo.bind(this);
         this.resetCanvas = this.resetCanvas.bind(this);
         this.headerRef = React.createRef();
     }
-
 
     chooseAlgo() {
         this.setState({algo:this.headerRef.current.state["algorithm"]})
@@ -27,13 +29,24 @@ export default class Home extends Component {
         this.setState({reset: value})
     }
 
-   
+    shootConfetti(event) {
+        console.log(event.target.value);
+        this.setState({'active': event.target.value});
+        this.setState({'active': false});
+    }
+
+
   render() {
     return (
-        <>  
+        <>
+            <Confetti active={ this.state.active } config={ this.config }/>
             <Header ref={this.headerRef}/>
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
+                    <input defaultValue={window.sorted}
+                      value={this.state.active}
+                      onChange={event => {this.shootConfetti(event)}}/>
+
                     <Button onClick={this.chooseAlgo}>Start sorting</Button>
                     <Button onClick={() => this.resetCanvas('true')}>Reset</Button>
                     <P5Wrapper sketch={sketch} algo={this.state.algo} reset={this.state.reset}></P5Wrapper>
@@ -43,4 +56,3 @@ export default class Home extends Component {
     );
   }
 }
-

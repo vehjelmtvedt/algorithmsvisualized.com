@@ -4,10 +4,11 @@ import random from 'random'
 import selectionSort from '../utils/algorithms/selectionSort'
 import bubbleSort from '../utils/algorithms/bubbleSort'
 import insertionSort from '../utils/algorithms/insertionSort'
-import testing from '../utils/functions/testing'
 
 
 export default function sketch(p){
+
+
   // Color Variables
     let blue;
     let green;
@@ -19,6 +20,7 @@ export default function sketch(p){
     let bars = [];
     let values = [];
     let BAR_WIDTH = 60;
+
 
     p.setup = () => {
       canvas = p.createCanvas(900, 450);
@@ -89,6 +91,8 @@ export default function sketch(p){
             }
             if (newProps.algo === "bubble") {
                 bubbleSort(bars, colors)
+                // sorting is done, now celebrate
+                console.log("I AM DONE");
             } else if (newProps.algo === "selection") {
                 selectionSort(bars, colors);
             } else if (newProps.algo === "insertion") {
@@ -99,6 +103,4 @@ export default function sketch(p){
             return;
         }
     }
-
-
 }
