@@ -4,6 +4,7 @@ import random from 'random'
 import selectionSort from '../utils/algorithms/selectionSort'
 import bubbleSort from '../utils/algorithms/bubbleSort'
 import insertionSort from '../utils/algorithms/insertionSort'
+import celebration from '../utils/algorithms/celebration'
 
 
 export default function sketch(p){
@@ -90,9 +91,7 @@ export default function sketch(p){
                return;
             }
             if (newProps.algo === "bubble") {
-                bubbleSort(bars, colors)
-                // sorting is done, now celebrate
-                console.log("I AM DONE");
+                bubbleSort(bars, colors);
             } else if (newProps.algo === "selection") {
                 selectionSort(bars, colors);
             } else if (newProps.algo === "insertion") {

@@ -43,10 +43,7 @@ export default class Home extends Component {
             <Header ref={this.headerRef}/>
             <Jumbotron className="jumbotron">
                 <div className="sketchcontainer">
-                    <input defaultValue={window.sorted}
-                      value={this.state.active}
-                      onChange={event => {this.shootConfetti(event)}}/>
-
+                    
                     <Button onClick={this.chooseAlgo}>Start sorting</Button>
                     <Button onClick={() => this.resetCanvas('true')}>Reset</Button>
                     <P5Wrapper sketch={sketch} algo={this.state.algo} reset={this.state.reset}></P5Wrapper>

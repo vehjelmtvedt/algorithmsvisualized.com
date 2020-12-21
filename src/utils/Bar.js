@@ -64,6 +64,7 @@ export default class Bar {
         }
     }
 
+
     changeColor(nextColor) {
         this.changingColor = true;
         this.nextColor = nextColor;
