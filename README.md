@@ -9,7 +9,7 @@ Much inspiration was gathered from visualgo.net.
 
 ___
 
-## Getting
+## Getting started
 1. Install ```npm```
 2. clone this repository
 3. ```cd algorithmsvisualized.com```
