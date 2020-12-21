@@ -55,14 +55,34 @@ export default function sketch(p){
         p.background(255, 255, 255);
         for (let i = 0; i < bars.length; i++) {
             drawBar(bars[i]);
+            
         }
     }
 
     function drawBar(bar) {
         p.fill(getColor(bar));
         p.noStroke();
+        // Draw bar
         p.rect(bar.x, bar.y, BAR_WIDTH - 10, -bar.height);
+        // Fill black for text
+        p.fill(p.color(0,0,0))
+        p.textSize(14);
+        p.text(bar.height, bar.x+textOffset(bar.height), bar.y+15);
     }
+
+    function textOffset(height) {
+        // Offset depends on number of digits
+        var digits = height.toString(10).length;
+        if (digits == 1) {
+            return 20;
+        } else if (digits == 2) {
+            return 17;
+        } else {
+            return 12;
+        }
+    }
+
+
 
     function getColor(bar) {
         if (bar.changingColor) {
