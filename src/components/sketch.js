@@ -4,7 +4,6 @@ import random from 'random'
 import selectionSort from '../utils/algorithms/selectionSort'
 import bubbleSort from '../utils/algorithms/bubbleSort'
 import insertionSort from '../utils/algorithms/insertionSort'
-import celebration from '../utils/algorithms/celebration'
 
 
 export default function sketch(p){
